@@ -19,16 +19,35 @@ echo "8) Edit a file"
 echo "9) Exit"
 read -p " Enter Your Choice : " choice
 
-case $choice in 
-1) pwd;;
-2) ls -l;;
-3) mkdir myfile;;
-4) cd ~/Desktop;;
-5) cp -r myfile mynewfile;;
-6) mv myfile mytempfile;;
-7) rm -r mynewfile rm -r mytempfile;;
-8) read -p "Enter file name to edit: " filename
-   vi "$filename" ;;
-9) exit;;
-*) echo "Wrong Input"
+case $choice in
+1) pwd ;;
+2) ls -l $(pwd) ;;
+3)
+    read -p "Enter File Name : " myfile
+    mkdir $myfile
+    ;;
+4)
+    read -p "Enter Path : " path
+    cd $path
+    ;;
+5)
+    read -p "Enter File Name : " p_name
+    read -p "Enter New File Name : " n_name
+    cp -r $p_name $n_name
+    ;;
+6)
+    read -p "Enter File Name : " p_name
+    read -p "Enter New File Name : " n_name
+    mv $p_name $n_name 
+    ;;
+7)
+    read -p "Enter File Name : " fname
+    rm -r $fname
+    ;;
+8)
+    read -p "Enter file name to edit: " filename
+    vi "$filename"
+    ;;
+9) exit ;;
+*) echo "Wrong Input" ;;
 esac
