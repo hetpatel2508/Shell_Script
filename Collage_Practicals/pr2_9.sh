@@ -8,7 +8,7 @@ if [ $(date +%H) -ge 0 ] && [ $(date +%H) -lt 16 ]
 then 
 sudo wall "Good Morning...!"
 
-elif [ $(date +%H) -ge 16 ] && [ $(date +%H) -gt 20 ] 
+elif [ $(date +%H) -ge 16 ] && [ $(date +%H) -lt 20 ] 
 then
 sudo wall "Good Afternoon...! "
 
